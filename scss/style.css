@@ -40,7 +40,7 @@ body,
 
 #client1,
 #client2 {
-  width: 30vw;
+  width: 88vw;
   height: 98vh;
   background: black;
   color: whitesmoke;
@@ -208,6 +208,27 @@ body,
 #client1 .input .sendButton i,
 #client2 .input .sendButton i {
   margin-right: 3px;
+}
+
+@media (min-width: 576px) {
+  #client1,
+  #client2 {
+    width: 70vw;
+  }
+}
+
+@media (min-width: 680px) {
+  #client1,
+  #client2 {
+    width: 51vw;
+  }
+}
+
+@media (min-width: 1000px) {
+  #client1,
+  #client2 {
+    width: 30vw;
+  }
 }
 
 ::-webkit-scrollbar {
