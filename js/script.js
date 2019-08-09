@@ -11,7 +11,6 @@ function showTime() {
 
 setInterval(showTime, -1000);
 
-
 Number.prototype.format = function () {
     return this / 10 < 1 ? "0" + this : "" + this;
 }
@@ -37,3 +36,15 @@ function updateScroll() {
     var element = document.getElementsByClassName("chat")[1];
     element.scrollTop = element.scrollHeight;
 }
+
+document.getElementsByTagName("input")[0].addEventListener("keydown", function(e){
+    if(e.which === 13){
+        send(0);
+    }
+});
+
+document.getElementsByTagName("input")[1].addEventListener("keydown", function(e){
+    if(e.which === 13){
+        send(1);
+    }
+});
