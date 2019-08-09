@@ -93,7 +93,7 @@ body,
 #client1 .contact .person div .status,
 #client2 .contact .person div .status {
   font-size: 0.6rem;
-  display: none;
+  display: block;
 }
 
 #client1 .contact .person div:hover .status,
@@ -184,6 +184,7 @@ body,
   height: 30px;
   font-size: 18px;
   border: none;
+  outline: none;
 }
 
 #client1 .input .textArea i,

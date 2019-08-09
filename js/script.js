@@ -10,6 +10,7 @@ function showTime() {
 }
 
 setInterval(showTime, -1000);
+setInterval(statusChecker, 1000);
 
 Number.prototype.format = function () {
     return this / 10 < 1 ? "0" + this : "" + this;
@@ -31,20 +32,35 @@ function send(i) {
 
 
 function updateScroll() {
-    var element = document.getElementsByClassName("chat")[0];
-    element.scrollTop = element.scrollHeight;
-    var element = document.getElementsByClassName("chat")[1];
-    element.scrollTop = element.scrollHeight;
+    let e1 = document.getElementsByClassName("chat")[0];
+    e1.scrollTop = e1.scrollHeight;
+    let e2 = document.getElementsByClassName("chat")[1];
+    e2.scrollTop = e2.scrollHeight;
 }
 
-document.getElementsByTagName("input")[0].addEventListener("keydown", function(e){
-    if(e.which === 13){
-        send(0);
-    }
-});
+for (let i = 0; i < 2; i++) {
+    document.getElementsByTagName("input")[i].addEventListener("keydown", function (e) {
+        if (e.which === 13) {
+            send(i);
+        }
+    });
 
-document.getElementsByTagName("input")[1].addEventListener("keydown", function(e){
-    if(e.which === 13){
-        send(1);
-    }
-});
+}
+
+
+
+
+
+function statusChecker() {
+    console.log(document.getElementById("client1") == document.querySelector( ':focus' ));
+    // if (document.getElementById("client1") === document.activeElement) {
+    //     document.getElementsByClassName("status")[0].innerHTML = "online";
+    // }
+
+    // else {
+    //     document.getElementsByClassName("status")[0].innerHTML = "not online";
+    // }
+}
+
+
+
