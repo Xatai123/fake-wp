@@ -1,0 +1,165 @@
+// https://imag.malavida.com/mvimgbig/download-fs/whatsapp-10159-9.jpg
+
+$background: #4527a0;
+
+* {
+  margin: 0;
+}
+
+p {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+html,
+body,
+#main {
+  width: 100%;
+  @extend .flex;
+  height: 100%;
+  background: rgb(40, 40, 40);
+}
+
+#client1,
+#client2 {
+  width: 30vw;
+  height: 98vh;
+  background: black;
+  color: whitesmoke;
+
+  .notfBar {
+    @extend .flex;
+    justify-content: space-between;
+    height: 3.5%;
+    background: rgb(5, 75, 69);
+    font-size: 0.8rem;
+    padding: 0 7px;
+
+    i {
+      margin: 0 1px;
+    }
+  }
+
+  .contact {
+    @extend .flex;
+    justify-content: space-between;
+    height: 7.5%;
+    background: rgb(8, 91, 82);
+    padding: 0 10px;
+
+    .person {
+      @extend .flex;
+      height: 100%;
+      img {
+        height: 80%;
+        border-radius: 100%;
+        margin: 0 10px;
+      }
+
+      div {
+        p {
+          width: 100%;
+          display: block;
+        }
+        .status {
+          font-size: 0.6rem;
+          display: none;
+        }
+
+        &:hover .status {
+          display: block;
+        }
+      }
+    }
+
+    .options {
+      i {
+        font-size: 1rem;
+        padding: 0 11px;
+      }
+    }
+  }
+
+  .chat {
+    @extend .flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    background: $background;
+    height: 81%;
+    color: black;
+
+    .message,
+    .response {
+      @extend .flex;
+      justify-content: flex-start;
+      background: lightgreen;
+      width: 80%;
+      margin: 4px 7px;
+      border-radius: 10px;
+      p {
+        margin-left: 10px;
+        line-height: 27px;
+      }
+      h5 {
+        width: 100%;
+        text-align: end;
+        font-size: 0.5rem;
+        margin-right:10px;
+        margin-bottom:2px;
+      }
+    }
+    .response {
+      background: wheat;
+      margin-right: 30%;
+    }
+  }
+
+  .input {
+    background: $background;
+    height: 8%;
+    @extend .flex;
+    justify-content: space-between;
+
+    .textArea {
+      @extend .flex;
+      background: white;
+      height: 40px;
+      width: calc(100% - 60px);
+      border-radius: 50px;
+      margin-left: 5px;
+      color: black;
+      padding: 0px 4px;
+      input {
+        width: 70%;
+        height: 30px;
+        font-size: 18px;
+        border: none;
+      }
+      i {
+        color: grey;
+        font-size: 1.1rem;
+      }
+    }
+
+    .sendButton {
+      @extend .flex;
+      height: 40px;
+      width: 40px;
+      border-radius: 100%;
+      background: rgb(8, 91, 82);
+      margin-right: 3px;
+      border: none;
+      color: whitesmoke;
+      font-size: 1.3rem;
+      i {
+        margin-right: 3px;
+      }
+    }
+  }
+}

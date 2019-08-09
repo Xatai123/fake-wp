@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+}
+
+p {
+  display: inline-block;
+}
+
+.flex, html,
+body,
+#main, #client1 .notfBar,
+#client2 .notfBar, #client1 .contact,
+#client2 .contact, #client1 .contact .person,
+#client2 .contact .person, #client1 .chat,
+#client2 .chat, #client1 .chat .message,
+#client1 .chat .response,
+#client2 .chat .message,
+#client2 .chat .response, #client1 .input,
+#client2 .input, #client1 .input .textArea,
+#client2 .input .textArea, #client1 .input .sendButton,
+#client2 .input .sendButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html,
+body,
+#main {
+  width: 100%;
+  height: 100%;
+  background: #282828;
+}
+
+#client1,
+#client2 {
+  width: 30vw;
+  height: 98vh;
+  background: black;
+  color: whitesmoke;
+}
+
+#client1 .notfBar,
+#client2 .notfBar {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 3.5%;
+  background: #054b45;
+  font-size: 0.8rem;
+  padding: 0 7px;
+}
+
+#client1 .notfBar i,
+#client2 .notfBar i {
+  margin: 0 1px;
+}
+
+#client1 .contact,
+#client2 .contact {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 7.5%;
+  background: #085b52;
+  padding: 0 10px;
+}
+
+#client1 .contact .person,
+#client2 .contact .person {
+  height: 100%;
+}
+
+#client1 .contact .person img,
+#client2 .contact .person img {
+  height: 80%;
+  border-radius: 100%;
+  margin: 0 10px;
+}
+
+#client1 .contact .person div p,
+#client2 .contact .person div p {
+  width: 100%;
+  display: block;
+}
+
+#client1 .contact .person div .status,
+#client2 .contact .person div .status {
+  font-size: 0.6rem;
+  display: none;
+}
+
+#client1 .contact .person div:hover .status,
+#client2 .contact .person div:hover .status {
+  display: block;
+}
+
+#client1 .contact .options i,
+#client2 .contact .options i {
+  font-size: 1rem;
+  padding: 0 11px;
+}
+
+#client1 .chat,
+#client2 .chat {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  background: #4527a0;
+  height: 81%;
+  color: black;
+}
+
+#client1 .chat .message,
+#client1 .chat .response,
+#client2 .chat .message,
+#client2 .chat .response {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background: lightgreen;
+  width: 80%;
+  margin: 4px 7px;
+  border-radius: 10px;
+}
+
+#client1 .chat .message p,
+#client1 .chat .response p,
+#client2 .chat .message p,
+#client2 .chat .response p {
+  margin-left: 10px;
+  line-height: 27px;
+}
+
+#client1 .chat .message h5,
+#client1 .chat .response h5,
+#client2 .chat .message h5,
+#client2 .chat .response h5 {
+  width: 100%;
+  text-align: end;
+  font-size: 0.5rem;
+  margin-right: 10px;
+  margin-bottom: 2px;
+}
+
+#client1 .chat .response,
+#client2 .chat .response {
+  background: wheat;
+  margin-right: 30%;
+}
+
+#client1 .input,
+#client2 .input {
+  background: #4527a0;
+  height: 8%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#client1 .input .textArea,
+#client2 .input .textArea {
+  background: white;
+  height: 40px;
+  width: calc(100% - 60px);
+  border-radius: 50px;
+  margin-left: 5px;
+  color: black;
+  padding: 0px 4px;
+}
+
+#client1 .input .textArea input,
+#client2 .input .textArea input {
+  width: 70%;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+}
+
+#client1 .input .textArea i,
+#client2 .input .textArea i {
+  color: grey;
+  font-size: 1.1rem;
+}
+
+#client1 .input .sendButton,
+#client2 .input .sendButton {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background: #085b52;
+  margin-right: 3px;
+  border: none;
+  color: whitesmoke;
+  font-size: 1.3rem;
+}
+
+#client1 .input .sendButton i,
+#client2 .input .sendButton i {
+  margin-right: 3px;
+}
+/*# sourceMappingURL=style.css.map */
