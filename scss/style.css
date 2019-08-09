@@ -11,8 +11,7 @@ body,
 #main, #client1 .notfBar,
 #client2 .notfBar, #client1 .contact,
 #client2 .contact, #client1 .contact .person,
-#client2 .contact .person, #client1 .chat,
-#client2 .chat, #client1 .chat .message,
+#client2 .contact .person, #client1 .chat .message,
 #client1 .chat .response,
 #client2 .chat .message,
 #client2 .chat .response, #client1 .input,
@@ -110,14 +109,13 @@ body,
 
 #client1 .chat,
 #client2 .chat {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
-  background: #4527a0;
-  height: 81%;
+  display: block;
+  background: black;
+  height: 522px;
   color: black;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: white #1e1e1e;
 }
 
 #client1 .chat .message,
@@ -127,10 +125,12 @@ body,
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background: lightgreen;
+  background: #e2ffc7;
   width: 80%;
   margin: 4px 7px;
   border-radius: 10px;
+  float: right;
+  padding: 0 5px;
 }
 
 #client1 .chat .message p,
@@ -154,13 +154,13 @@ body,
 
 #client1 .chat .response,
 #client2 .chat .response {
-  background: wheat;
-  margin-right: 30%;
+  background: whitesmoke;
+  float: left;
 }
 
 #client1 .input,
 #client2 .input {
-  background: #4527a0;
+  background: black;
   height: 8%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -207,5 +207,17 @@ body,
 #client1 .input .sendButton i,
 #client2 .input .sendButton i {
   margin-right: 3px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #535353;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
 }
 /*# sourceMappingURL=style.css.map */

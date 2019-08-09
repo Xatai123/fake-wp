@@ -1,6 +1,6 @@
 // https://imag.malavida.com/mvimgbig/download-fs/whatsapp-10159-9.jpg
 
-$background: #4527a0;
+$background: black;
 
 * {
   margin: 0;
@@ -87,21 +87,24 @@ body,
   }
 
   .chat {
-    @extend .flex;
-    justify-content: flex-end;
-    align-content: flex-end;
+    display: block;
     background: $background;
-    height: 81%;
+    height: 522px;
     color: black;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: white rgb(30,30,30);
 
     .message,
     .response {
       @extend .flex;
       justify-content: flex-start;
-      background: lightgreen;
+      background: rgb(226,255,199);
       width: 80%;
       margin: 4px 7px;
       border-radius: 10px;
+      float: right;
+      padding: 0 5px;
       p {
         margin-left: 10px;
         line-height: 27px;
@@ -115,8 +118,8 @@ body,
       }
     }
     .response {
-      background: wheat;
-      margin-right: 30%;
+      background: whitesmoke;
+      float: left;
     }
   }
 
@@ -162,4 +165,17 @@ body,
       }
     }
   }
+}
+
+// scrollbar
+ ::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(83, 83, 83);
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
 }
