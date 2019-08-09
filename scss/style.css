@@ -111,7 +111,7 @@ body,
 #client2 .chat {
   display: block;
   background: black;
-  height: 522px;
+  height: 81%;
   color: black;
   overflow: auto;
   scrollbar-width: thin;
