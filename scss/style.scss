@@ -29,6 +29,7 @@ body,
 #client1,
 #client2 {
   width: 88vw;
+  margin-bottom: 30px;
   height: 98vh;
   background: black;
   color: whitesmoke;
@@ -99,18 +100,62 @@ body,
 
     .message,
     .response {
-      @extend .flex;
-      justify-content: flex-start;
+      display: block;
       background: rgb(226, 255, 199);
       width: 80%;
       margin: 4px 7px;
       border-radius: 10px;
       float: right;
       padding: 0 5px;
+      position: relative;
+
+      &.d-none {
+        display: none;
+      }
 
       p {
         margin-left: 10px;
         line-height: 27px;
+      }
+
+      .delete {
+        position: absolute;
+        right: 0;
+        opacity: 0;
+        transition: 0.3s;
+        border-radius: 10px;
+        border: none;
+        font-size: 1.2rem;
+        z-index: 9;
+
+        &:hover {
+          opacity: 1;
+          background: inherit;
+        }
+
+        ul {
+          display: none;
+          position: absolute;
+          right: 5px;
+          width: 180px;
+          list-style: none;
+          background: rgb(226, 226, 226);
+          padding: 10px 0;
+          border: 1px rgba(0,0,0,0.1) solid;
+          border-radius: 10px;
+
+          &.d-block {
+            display: block;
+          }
+
+          li {
+            width: 100%;
+
+            &:hover {
+              background: grey;
+            }
+          }
+        }
       }
 
       h5 {
@@ -180,6 +225,7 @@ body,
   #client1,
   #client2 {
     width: 70vw;
+    margin-bottom: 40px;
   }
 }
 
@@ -187,6 +233,7 @@ body,
   #client1,
   #client2 {
     width: 51vw;
+    margin-bottom: 40px;
   }
 }
 
@@ -195,7 +242,6 @@ body,
   #client2 {
     width: 30vw;
   }
-  
 }
 
 // scrollbar

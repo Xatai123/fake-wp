@@ -11,10 +11,7 @@ body,
 #main, #client1 .notfBar,
 #client2 .notfBar, #client1 .contact,
 #client2 .contact, #client1 .contact .person,
-#client2 .contact .person, #client1 .chat .message,
-#client1 .chat .response,
-#client2 .chat .message,
-#client2 .chat .response, #client1 .input,
+#client2 .contact .person, #client1 .input,
 #client2 .input, #client1 .input .textArea,
 #client2 .input .textArea, #client1 .input .sendButton,
 #client2 .input .sendButton {
@@ -41,6 +38,7 @@ body,
 #client1,
 #client2 {
   width: 88vw;
+  margin-bottom: 30px;
   height: 98vh;
   background: black;
   color: whitesmoke;
@@ -122,15 +120,21 @@ body,
 #client1 .chat .response,
 #client2 .chat .message,
 #client2 .chat .response {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  display: block;
   background: #e2ffc7;
   width: 80%;
   margin: 4px 7px;
   border-radius: 10px;
   float: right;
   padding: 0 5px;
+  position: relative;
+}
+
+#client1 .chat .message.d-none,
+#client1 .chat .response.d-none,
+#client2 .chat .message.d-none,
+#client2 .chat .response.d-none {
+  display: none;
 }
 
 #client1 .chat .message p,
@@ -139,6 +143,65 @@ body,
 #client2 .chat .response p {
   margin-left: 10px;
   line-height: 27px;
+}
+
+#client1 .chat .message .delete,
+#client1 .chat .response .delete,
+#client2 .chat .message .delete,
+#client2 .chat .response .delete {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2rem;
+  z-index: 9;
+}
+
+#client1 .chat .message .delete:hover,
+#client1 .chat .response .delete:hover,
+#client2 .chat .message .delete:hover,
+#client2 .chat .response .delete:hover {
+  opacity: 1;
+  background: inherit;
+}
+
+#client1 .chat .message .delete ul,
+#client1 .chat .response .delete ul,
+#client2 .chat .message .delete ul,
+#client2 .chat .response .delete ul {
+  display: none;
+  position: absolute;
+  right: 5px;
+  width: 180px;
+  list-style: none;
+  background: #e2e2e2;
+  padding: 10px 0;
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+  border-radius: 10px;
+}
+
+#client1 .chat .message .delete ul.d-block,
+#client1 .chat .response .delete ul.d-block,
+#client2 .chat .message .delete ul.d-block,
+#client2 .chat .response .delete ul.d-block {
+  display: block;
+}
+
+#client1 .chat .message .delete ul li,
+#client1 .chat .response .delete ul li,
+#client2 .chat .message .delete ul li,
+#client2 .chat .response .delete ul li {
+  width: 100%;
+}
+
+#client1 .chat .message .delete ul li:hover,
+#client1 .chat .response .delete ul li:hover,
+#client2 .chat .message .delete ul li:hover,
+#client2 .chat .response .delete ul li:hover {
+  background: grey;
 }
 
 #client1 .chat .message h5,
@@ -214,6 +277,7 @@ body,
   #client1,
   #client2 {
     width: 70vw;
+    margin-bottom: 40px;
   }
 }
 
@@ -221,6 +285,7 @@ body,
   #client1,
   #client2 {
     width: 51vw;
+    margin-bottom: 40px;
   }
 }
 
