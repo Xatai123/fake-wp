@@ -152,6 +152,7 @@ body,
 #client2 .chat .response .delete {
   position: absolute;
   right: 0;
+  top: 0;
   opacity: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
