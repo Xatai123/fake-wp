@@ -122,7 +122,8 @@ body,
 #client2 .chat .response {
   display: block;
   background: #e2ffc7;
-  width: 80%;
+  max-width: 80%;
+  min-width: 51%;
   margin: 4px 7px;
   border-radius: 10px;
   float: right;

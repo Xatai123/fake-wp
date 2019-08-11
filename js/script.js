@@ -26,14 +26,14 @@ function send(i) {
     document.getElementsByTagName("input")[i].value = "";
     let owner = '<li onclick="deleteForEveryone(this)">Delete for everyone</li>';
     let sendHtml1 = text
-        + '</p><button class="delete" onclick="deleteButton(this)"> <i class="fas fa-chevron-down"></i> <ul><li onclick="deleteForMe(this)">Delete for me</li>';
+        + '</p> <button class="delete" onclick="deleteButton(this)"> <i class="fas fa-chevron-down"></i> <ul> <li onclick="deleteForMe(this)">Delete for me</li> ';
     let sendHtml2 = '</ul> </button><h5>'
         + timeString
-        + ' <i class="fas fa-check"></i></h5></div>';
+        + ' <i class="fas fa-check"> </i> </h5></div>';
 
-    document.getElementsByClassName("chat")[i].innerHTML += '<div class="message"><p>' + sendHtml1 + owner + sendHtml2;
+    document.getElementsByClassName("chat")[i].innerHTML += ' <div class="message"> <p> ' + sendHtml1 + owner + sendHtml2;
     k = i === 0 ? 1 : 0;
-    document.getElementsByClassName("chat")[k].innerHTML += '<div class="response"><p>' + sendHtml1 + owner + sendHtml2;
+    document.getElementsByClassName("chat")[k].innerHTML += ' <div class="response"> <p> ' + sendHtml1 + sendHtml2;
     updateScroll();
 }
 
@@ -74,6 +74,10 @@ function deleteForEveryone(e) {
     for (let i = 0; i < chat.length; i++) {
         let k = chat[i].childNodes[index].innerHTML;
         chat[i].childNodes[index].innerHTML = k.substr(0, k.indexOf("<p>") + 3) + "<strong style='color: grey'>This message is deleted</strong>" + k.substr(k.indexOf("<", k.indexOf("</p>")));
+        let removed = chat[i].childNodes[index].childNodes[3].childNodes[3].childNodes[3];
+        if (removed) {
+            removed.parentElement.removeChild(removed);
+        }
     }
 }
 
