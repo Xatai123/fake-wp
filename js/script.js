@@ -25,16 +25,32 @@ function send(i) {
         return;
     document.getElementsByTagName("input")[i].value = "";
 
-    document.getElementsByClassName("chat")[i].appendChild(construct(true, text, timeString))
+    document.getElementsByClassName("chat")[i].appendChild(construct(true, false, text, timeString))
     k = i === 0 ? 1 : 0;
-    document.getElementsByClassName("chat")[k].appendChild(construct(false, text, timeString))
+    document.getElementsByClassName("chat")[k].appendChild(construct(false, false, text, timeString))
+
+    updateScroll();
+}
+
+
+function sendPic(i) {
+    let time = new Date();
+    let timeString = time.getHours().format() + ":" + time.getMinutes().format();
+    let url = document.getElementsByTagName("input")[i].value;
+    if (url === "")
+        return;
+    document.getElementsByTagName("input")[i].value = "";
+
+    document.getElementsByClassName("chat")[i].appendChild(construct(true, true, url, timeString))
+    k = i === 0 ? 1 : 0;
+    document.getElementsByClassName("chat")[k].appendChild(construct(false, true, url, timeString))
 
     updateScroll();
 }
 
 
 // constructs new message to send
-function construct(boo, text, time) {
+function construct(boo, img, text, time) {
 
     let div = document.createElement("div");
 
@@ -44,9 +60,16 @@ function construct(boo, text, time) {
         div.classList.add("response");
     }
 
-    let p = document.createElement("p");
-    p.innerText = text;
-    div.appendChild(p);
+    if (!img) {
+        let p = document.createElement("p");
+        p.innerText = text;
+        div.appendChild(p);
+    } else {
+        let img = document.createElement("img");
+        img.setAttribute("src", text)
+        div.appendChild(img);
+    }
+
 
     let button = document.createElement("button");
     button.classList.add("delete");
@@ -115,14 +138,14 @@ function deleteForEveryone(e) {
         let k = chat[i].childNodes[index];
         k.removeChild(k.firstChild);
         let p = document.createElement("p");
-        p.innerHTML = "<strong style='color: grey'>This message is deleted</strong>";
+        p.innerHTML = "<strong style='color: grey; margin-right:10px'>This message is deleted</strong>";
         k.insertBefore(p, k.firstChild)
         let removed = k.childNodes[1].childNodes[1].childNodes[1];
         if (removed) {
-            removed.parentElement.removeChild(removed);            
+            removed.parentElement.removeChild(removed);
         }
     }
-    
+
 }
 
 NodeList.prototype.indexOf = function (item) {
