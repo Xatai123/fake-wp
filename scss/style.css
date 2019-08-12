@@ -127,7 +127,8 @@ body,
   margin: 4px 7px;
   border-radius: 10px;
   float: right;
-  padding: 0 5px;
+  padding-right: 15px;
+  padding-left: 5px;
   position: relative;
 }
 
@@ -160,6 +161,7 @@ body,
   border: none;
   font-size: 1.2rem;
   z-index: 9;
+  outline: none;
 }
 
 #client1 .chat .message .delete:hover,
