@@ -11,43 +11,11 @@ function showTime() {
 
 }
 setInterval(showTime, -1000);
+updateScroll();
 
 Number.prototype.format = function () {
     return this / 10 < 1 ? "0" + this : "" + this;
 }
-
-// Send Message
-function send(i) {
-    let time = new Date();
-    let timeString = time.getHours().format() + ":" + time.getMinutes().format();
-    let text = document.getElementsByTagName("input")[i].value;
-    if (text === "")
-        return;
-    document.getElementsByTagName("input")[i].value = "";
-
-    document.getElementsByClassName("chat")[i].appendChild(construct(true, false, text, timeString))
-    k = i === 0 ? 1 : 0;
-    document.getElementsByClassName("chat")[k].appendChild(construct(false, false, text, timeString))
-
-    updateScroll();
-}
-
-
-function sendPic(i) {
-    let time = new Date();
-    let timeString = time.getHours().format() + ":" + time.getMinutes().format();
-    let url = document.getElementsByTagName("input")[i].value;
-    if (url === "")
-        return;
-    document.getElementsByTagName("input")[i].value = "";
-
-    document.getElementsByClassName("chat")[i].appendChild(construct(true, true, url, timeString))
-    k = i === 0 ? 1 : 0;
-    document.getElementsByClassName("chat")[k].appendChild(construct(false, true, url, timeString))
-
-    updateScroll();
-}
-
 
 // constructs new message to send
 function construct(boo, img, text, time) {
@@ -100,6 +68,38 @@ function construct(boo, img, text, time) {
     div.appendChild(h5);
 
     return div;
+}
+
+// Send Message
+function send(i) {
+    let time = new Date();
+    let timeString = time.getHours().format() + ":" + time.getMinutes().format();
+    let text = document.getElementsByTagName("input")[i].value;
+    if (text === "")
+        return;
+    document.getElementsByTagName("input")[i].value = "";
+
+    document.getElementsByClassName("chat")[i].appendChild(construct(true, false, text, timeString))
+    k = i === 0 ? 1 : 0;
+    document.getElementsByClassName("chat")[k].appendChild(construct(false, false, text, timeString))
+
+    updateScroll();
+}
+
+// send picture
+function sendPic(i) {
+    let time = new Date();
+    let timeString = time.getHours().format() + ":" + time.getMinutes().format();
+    let url = document.getElementsByTagName("input")[i].value;
+    if (url === "")
+        return;
+    document.getElementsByTagName("input")[i].value = "";
+
+    document.getElementsByClassName("chat")[i].appendChild(construct(true, true, url, timeString))
+    k = i === 0 ? 1 : 0;
+    document.getElementsByClassName("chat")[k].appendChild(construct(false, true, url, timeString))
+
+    updateScroll();
 }
 
 // Send with Enter 

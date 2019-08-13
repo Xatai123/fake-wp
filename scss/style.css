@@ -131,7 +131,6 @@ body,
   padding: 5px;
   padding-bottom: 0;
   position: relative;
-  overflow: hidden;
 }
 
 #client1 .chat .message.d-none,
