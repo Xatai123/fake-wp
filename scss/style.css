@@ -153,6 +153,7 @@ body,
 #client2 .chat .message img,
 #client2 .chat .response img {
   border-radius: 10px;
+  width: 100%;
 }
 
 #client1 .chat .message .delete,
