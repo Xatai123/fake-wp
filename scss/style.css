@@ -4,6 +4,7 @@
 
 p {
   display: inline-block;
+  overflow-wrap: break-word;
 }
 
 .flex, html,
@@ -144,6 +145,7 @@ body,
 #client1 .chat .response p,
 #client2 .chat .message p,
 #client2 .chat .response p {
+  width: 95%;
   margin-left: 10px;
   line-height: 27px;
 }
